@@ -9,4 +9,5 @@ int main()
     if (liczba < 0)
         liczba *= -1;
     printf("Wartosc bezwzgledna liczby: %f", liczba);
+    return 0;
 }
