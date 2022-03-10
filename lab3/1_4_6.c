@@ -9,10 +9,16 @@ int main()
     printf("Podaj liczbe calkowita n > 2: ");
     scanf("%d", &n);
 
+    i = 1;
     if (n > 2)
     {
-        for (i = 1; i <= n; i++)
-            wynik *= (2 * i);
+        while (i <= n)
+        {
+            if (i % 2 == 0)
+                wynik *= i;
+            i++;
+        }
+
         printf("%d", wynik);
     }
     else
