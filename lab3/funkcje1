@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sgn(double);
+
+int main()
+{
+    double x;
+    printf("Podaj liczbe: ");
+    scanf("%lf", &x);
+
+    if (sgn(x) == 1)
+        printf("Liczba dodatnia");
+    else if (sgn(x) == -1)
+        printf("Liczba ujemna");
+    else
+        printf("Zero");
+
+    return 0;
+}
+
+int sgn(double x)
+{
+    if (x > 0)
+        return 1;
+    else if (x < 0)
+        return -1;
+    else
+        return 0;
+}
