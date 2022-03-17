@@ -7,7 +7,7 @@ int najwiekszyDzielnik(int);
 int main()
 {
     int n;
-    printf("Wprowadz liczbe calkowita n > 2: ");
+    printf("Wprowadz liczbe calkowita nieujemna: ");
     scanf("%d",&n);
     if (n <= 2)
     {
@@ -22,6 +22,18 @@ int main()
 int najwiekszyDzielnik(int n)
 {
     int k;
-    for (k = n-1; n % k != 0; k--);
-        return k;
+    int wynik = 1;
+    if (n % 2)
+    {
+        for (k = 1; k <= ((n + 1) / 2); k++)
+            if (n % k == 0)
+                wynik = k;
+    }
+    else
+    {
+        for (k = 1; k <= (n / 2); k++)
+            if (n % k == 0)
+                wynik = k;
+    }
+    return wynik;
 }
