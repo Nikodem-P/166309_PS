@@ -6,6 +6,7 @@ double* rezerwujPamiec();
 int main()
 {
     printf("%p", rezerwujPamiec());
+    return 0;
 }
 
 double* rezerwujPamiec()
