@@ -21,7 +21,7 @@ int main()
         for (int* p = tab; p < tab + n; p++)
             printf("%d\n", *p);
 
-        int maks = *tab, ilosc = 0;
+        int maks = *tab, ilosc = 1;
         for (int* p = tab; p <= tab + n; p++)
             {
                 if (*p > maks)
