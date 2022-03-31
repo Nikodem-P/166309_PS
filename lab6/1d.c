@@ -7,7 +7,7 @@ int main()
 {
     srand(time(NULL));
 
-    int n, prawy, lewy;
+    int n;
     printf("Wprowadz liczbe calkowita n przedzialu [1; 100]: ");
     scanf("%d", &n);
 
