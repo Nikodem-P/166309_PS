@@ -1,0 +1,1 @@
+Nikodem Przybyszewski, 3 io, 7 kwietnia 2022, kolokwium nr 1, programowanie strukturalne
