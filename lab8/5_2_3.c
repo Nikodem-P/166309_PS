@@ -2,28 +2,24 @@
 #include <stdlib.h>
 
 int porownaj(char*, char*);
-int porownaj(wchar_t*, wchar_t*);
+int w_porownaj(wchar_t*, wchar_t*);
 
 int main()
 {
     char str1[] = "ania";
-    char str2[] = "ani";
+    char str2[] = "ania";
     printf("%d", porownaj(str1, str2));
-    scanf("%d");
     return 0;
 }
 
 int porownaj(char* napis1, char* napis2)
 {
-    char* n1 = napis1;
-    char* n2 = napis2;
-
-    while ((*n1 != '\0') || (*n2 != '\0'))
+    while ((*napis1 != '\0') || (*napis2 != '\0'))
     {
-        if (*n1 = *n2)
+        if (*napis1 == *napis2)
         {
-            n1++;
-            n2++;
+            napis1++;
+            napis2++;
             continue;
         }
         else
@@ -32,17 +28,14 @@ int porownaj(char* napis1, char* napis2)
     return 1;
 }
 
-int porownaj(wchar_t* napis1, wchar_t* napis2)
+int w_porownaj(wchar_t* napis1, wchar_t* napis2)
 {
-    wchar_t* n1 = napis1;
-    wchar_t* n2 = napis2;
-
-    while ((*n1 != '\0') || (*n2 != '\0'))
+    while ((*napis1 != '\0') || (*napis2 != '\0'))
     {
-        if (*n1 = *n2)
+        if (*napis1 == *napis2)
         {
-            n1++;
-            n2++;
+            napis1++;
+            napis2++;
             continue;
         }
         else
@@ -50,4 +43,3 @@ int porownaj(wchar_t* napis1, wchar_t* napis2)
     }
     return 1;
 }
-
