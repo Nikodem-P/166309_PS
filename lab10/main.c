@@ -17,6 +17,7 @@ int main()
 //free(nowyNapis);
     return 0;
 }
+
 size_t strlen(const char* s)
 {
     size_t length = 0;
