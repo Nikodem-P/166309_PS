@@ -59,7 +59,7 @@ char* strncat(char* t, const char* s, size_t n)
 
 bool strend(const char* s, const char *t)
 {
-    char* p = s + strlen(s) - strlen(t);
+    const char* p = s + strlen(s) - strlen(t);
     while (*p != '\0')
     {
         if (*p == *t)
