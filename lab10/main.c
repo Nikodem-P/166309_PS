@@ -7,12 +7,13 @@ char* strcpy(char* t, const char* s);
 char* strncpy(char* t, const char* s, size_t n);
 char* strcat(char* t, const char* s);
 bool strend(const char* s, const char *t);
+bool strendArr(const char* s, const char *t);
 
 int main()
 {
     char* napis = "Test napisowy, napis testowy.";
     char nowyNapis[5] = "owy."; // = calloc(strlen(napis), sizeof(char));
-    printf("%d\n", strend(napis, nowyNapis));
+    printf("%d\n", strendArr(napis, nowyNapis));
 //printf("%s\n", nowyNapis);
 //free(nowyNapis);
     return 0;
@@ -66,6 +67,24 @@ bool strend(const char* s, const char *t)
         {
             p++;
             t++;
+            continue;
+        }
+        else
+            return false;
+    }
+    return true;
+}
+
+bool strendArr(const char* s, const char *t)
+{
+    int i = strlen(s) - strlen(t);
+    int j = 0;
+    while (s[i] != '\0')
+    {
+        if (s[i] == t[j])
+        {
+            i++;
+            j++;
             continue;
         }
         else
