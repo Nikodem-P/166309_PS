@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 size_t strlen(const char* s);
 char* strcpy(char* t, const char* s);
 char* strncpy(char* t, const char* s, size_t n);
 char* strcat(char* t, const char* s);
+bool strend(const char* s, const char *t);
 
 int main()
 {
     char* napis = "Test napisowy, napis testowy.";
-    char nowyNapis[40] = "Poczatek"; // = calloc(strlen(napis), sizeof(char));
-    printf("%s\n", strncat(nowyNapis, napis, 8));
+    char nowyNapis[5] = "owy."; // = calloc(strlen(napis), sizeof(char));
+    printf("%d\n", strend(napis, nowyNapis));
 //printf("%s\n", nowyNapis);
 //free(nowyNapis);
     return 0;
@@ -22,6 +24,8 @@ size_t strlen(const char* s)
         length++;
     return length;
 }
+
+
 
 char* strcpy(char* t, const char* s)
 {
@@ -50,4 +54,21 @@ char* strncat(char* t, const char* s, size_t n)
     char* p = t;
     strncpy(t + strlen(t), s, n);
     return p;
+}
+
+bool strend(const char* s, const char *t)
+{
+    char* p = s + strlen(s) - strlen(t);
+    while (*p != '\0')
+    {
+        if (*p == *t)
+        {
+            p++;
+            t++;
+            continue;
+        }
+        else
+            return false;
+    }
+    return true;
 }
