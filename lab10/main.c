@@ -77,7 +77,7 @@ bool strend(const char* s, const char *t)
 
 bool strendArr(const char* s, const char *t)
 {
-    int i = strlen(s) - strlen(t);
+    int i = (int)strlen(s) - (int)strlen(t);
     int j = 0;
     while (s[i] != '\0')
     {
