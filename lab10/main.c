@@ -8,14 +8,12 @@ char* strncpy(char* t, const char* s, size_t n);
 int main()
 {
     char* napis = "Test napisowy, napis testowy.";
-    char* nowyNapis = calloc(strlen(napis) + 1, sizeof(char));
-    strncpy(nowyNapis, napis, sizeof(char)*4);
-    printf("%s\n", nowyNapis);
-    free(nowyNapis);
-
+    char nowyNapis[4]; // = calloc(strlen(napis), sizeof(char));
+    printf("%s\n", strncpy(nowyNapis, napis, 4));
+//printf("%s\n", nowyNapis);
+//free(nowyNapis);
     return 0;
 }
-
 size_t strlen(const char* s)
 {
     size_t length = 0;
@@ -34,7 +32,8 @@ char* strcpy(char* t, const char* s)
 char* strncpy(char* t, const char* s, size_t n)
 {
     char* p = t;
-    while (s <= s + n)
+    while (*s != '\0' && n-- != 0)
         *t++ = *s++;
     return p;
 }
+
