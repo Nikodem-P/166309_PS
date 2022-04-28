@@ -10,7 +10,7 @@ int main()
 {
     char* napis = "Test napisowy, napis testowy.";
     char nowyNapis[40] = "Poczatek"; // = calloc(strlen(napis), sizeof(char));
-    printf("%s\n", strcat(nowyNapis, napis));
+    printf("%s\n", strncat(nowyNapis, napis, 8));
 //printf("%s\n", nowyNapis);
 //free(nowyNapis);
     return 0;
@@ -42,5 +42,12 @@ char* strcat(char* t, const char* s)
 {
     char* p = t;
     strcpy(t + strlen(t), s);
+    return p;
+}
+
+char* strncat(char* t, const char* s, size_t n)
+{
+    char* p = t;
+    strncpy(t + strlen(t), s, n);
     return p;
 }
