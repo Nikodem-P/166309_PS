@@ -11,5 +11,6 @@ typedef struct LineSegment
 
 LineSegment makeLineSegment(int ax, int bx, int ay, int by);
 LineSegment makeLineSegmentfromPoints(const Point* a, const Point* b);
+void show(const LineSegment* s);
 
 #endif //LAB11_LINESEGMENT_H
