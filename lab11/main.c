@@ -14,8 +14,8 @@ int main() {
     show(&lSegment);
     printf("length1: %lf\n", length(&lSegment));
     show(&lSegment2);
-    printf("\nslope1: %lf, slope2: %lf\n", slope(&lSegment), slope(&lSegment2));
     printf("length2: %lf\n", length(&lSegment2));
+    printf("\nslope1: %lf, slope2: %lf\n", slope(&lSegment), slope(&lSegment2));
     printf("perp: %d\n", perpendicular(&lSegment, &lSegment2));
     printf("par: %d\n", parallel(&lSegment, &lSegment2));
 

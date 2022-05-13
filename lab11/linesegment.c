@@ -25,8 +25,8 @@ LineSegment makeLineSegmentFromPoints(const Point* pa, const Point* pb)
 
 void show(const LineSegment* s)
 {
-    printf("\nPoczatek: (%d, %d)\n", s->a.x, s->a.y);
-    printf("Koniec: (%d, %d)\n", s->b.x, s->b.y);
+    printf("A = (%d, %d)\n", s->a.x, s->a.y);
+    printf("B = (%d, %d)\n", s->b.x, s->b.y);
 }
 
 double length(const LineSegment* s)
