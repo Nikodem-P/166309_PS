@@ -33,3 +33,24 @@ double length(const LineSegment* s)
 {
     return sqrt((s->b.x - s->a.x)^2 + (s->b.y - s->a.y)^2);
 }
+
+double slope(const  LineSegment* s)
+{
+    return ((double)(s->b.y - s->a.y)/(double)(s->a.x - s->a.y));
+}
+
+bool parallel(const LineSegment* s1,const LineSegment* s2)
+{
+    if (slope(&s1) == slope(&s2))
+        return true;
+    else
+        return false;
+}
+
+bool perpendicular(const LineSegment* s1,const LineSegment* s2)
+{
+    if (slope(&s1) * slope(&s2) == -1.0)
+        return true;
+    else
+        return false;
+}
