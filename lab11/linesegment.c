@@ -31,25 +31,32 @@ void show(const LineSegment* s)
 
 double length(const LineSegment* s)
 {
-    return sqrt((s->b.x - s->a.x)^2 + (s->b.y - s->a.y)^2);
+    return sqrt(pow((s->b.x - s->a.x), 2) + pow((s->b.y - s->a.y),2));
 }
 
 double slope(const  LineSegment* s)
 {
-    return ((double)(s->b.y - s->a.y)/(double)(s->a.x - s->a.y));
+    if ((s->b.x - s->a.x) == 0)
+        return NAN;
+    else
+        return ((double)(s->b.y - s->a.y)/(double)(s->b.x - s->a.x));
 }
 
-bool parallel(const LineSegment* s1,const LineSegment* s2)
+bool parallel(const LineSegment* s1, const LineSegment* s2)
 {
-    if (slope(&s1) == slope(&s2))
+    if (isnan(slope(s1)) && isnan(slope(s2)))
+        return true;
+    if (slope(s1) == slope(s2))
         return true;
     else
         return false;
 }
 
-bool perpendicular(const LineSegment* s1,const LineSegment* s2)
+bool perpendicular(const LineSegment* s1, const LineSegment* s2)
 {
-    if (slope(&s1) * slope(&s2) == -1.0)
+    if ((isnan(slope(s1)) && (slope(s2) == 0)) || ((slope(s1) == 0) && isnan(slope(s2))))
+        return true;
+    if (slope(s1) * slope(s2) == -1.0)
         return true;
     else
         return false;

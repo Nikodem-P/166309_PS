@@ -18,6 +18,6 @@ void show(const LineSegment* s);
 double length(const LineSegment* s);
 double slope(const  LineSegment* s);
 bool parallel(const LineSegment* s1, const LineSegment* s2);
-bool perpendicular(const LineSegment* s1,const LineSegment* s2);
+bool perpendicular(const LineSegment* s1, const LineSegment* s2);
 
 #endif //LAB11_LINESEGMENT_H
